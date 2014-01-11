@@ -52,7 +52,7 @@ var app = {
     },
 
     scan: function() {
-        console.log('scanning');
+        //console.log('scanning');
         
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
@@ -63,12 +63,12 @@ var app = {
             "Format: " + result.format + "\n" + 
             "Cancelled: " + result.cancelled);  
 
-           console.log("Scanner result: \n" +
-                "text: " + result.text + "\n" +
-                "format: " + result.format + "\n" +
-                "cancelled: " + result.cancelled + "\n");
-            document.getElementById("info").innerHTML = result.text;
-            console.log(result);
+           //console.log("Scanner result: \n" +
+                //"text: " + result.text + "\n" +
+                //"format: " + result.format + "\n" +
+                //"cancelled: " + result.cancelled + "\n");
+            //document.getElementById("info").innerHTML = result.text;
+            //console.log(result);
             /*
             if (args.format == "QR_CODE") {
                 window.plugins.childBrowser.showWebPage(args.text, { showLocationBar: false });
@@ -78,18 +78,18 @@ var app = {
         }, function (error) { 
             console.log("Scanning failed: ", error); 
         } );
-    },
+    }//,
 
-    encode: function() {
-        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+    //encode: function() {
+      //  var scanner = cordova.require("cordova/plugin/BarcodeScanner");
 
-        scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.nhl.com", function(success) {
-            alert("encode success: " + success);
-          }, function(fail) {
-            alert("encoding failed: " + fail);
-          }
-        );
+    //    scanner.encode(scanner.Encode.TEXT_TYPE, "http://www.nhl.com", function(success) {
+    //        alert("encode success: " + success);
+    //      }, function(fail) {
+    //        alert("encoding failed: " + fail);
+    //      }
+    //    );
 
-    }
+    //}
 
 };
