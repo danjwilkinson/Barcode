@@ -21,10 +21,10 @@
        <param name="key" value="willoughby"/>
     </feature>
 
+    <preference name="ios-statusbarstyle" value="black-opaque" />
     <preference name="phonegap-version" value="3.1.0" />
     <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />
-    <preference name="fullscreen"       value="true" />
     <preference name="webviewbounce"    value="false" />
 
     <icon src="icon.png" />
