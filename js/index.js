@@ -55,8 +55,13 @@ var app = {
         //console.log('scanning');
         
         var scanner = cordova.require("cordova/plugin/BarcodeScanner");
-
+        
         scanner.scan( function (result) { 
+                
+            //beep noise
+            var audio = new Audio("beep.wav");
+            audio.play();            
+            
             setTimeout(function() {
                 alert("We got a barcode\n" + 
                 "Result: " + result.text + "\n" + 
