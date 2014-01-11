@@ -37,6 +37,17 @@ var app = {
     // function, we must explicity call `app.receivedEvent(...);`
     onDeviceReady: function() {
         app.receivedEvent('deviceready');
+        
+        if (typeof jQuery != 'undefined') {
+ 
+    alert("jQuery library is loaded!");
+ 
+}else{
+ 
+    alert("jQuery library is not found!");
+ 
+}
+        
     },
 
     // Update DOM on a Received Event
