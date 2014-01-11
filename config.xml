@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "co.uk.iostudios.barcode"
         version   = "2.0.0">
-    <name>Scanner Demo</name>
+    <name>QR Scanner</name>
 
     <description>
         Scans barcodes test for IO Studios.
@@ -22,9 +22,9 @@
     </feature>
 
     <preference name="phonegap-version" value="3.1.0" />
-    <preference name="orientation"      value="default" />
+    <preference name="orientation"      value="portrait" />
     <preference name="target-device"    value="universal" />
-    <preference name="fullscreen"       value="false" />
+    <preference name="fullscreen"       value="true" />
     <preference name="webviewbounce"    value="false" />
 
     <icon src="icon.png" />
