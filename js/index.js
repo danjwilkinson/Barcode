@@ -19,7 +19,6 @@
 var app = {
     // Application Constructor
     initialize: function() {
-        StatusBar.overlaysWebView(false);
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -27,6 +26,7 @@ var app = {
     // Bind any events that are required on startup. Common events are:
     // `load`, `deviceready`, `offline`, and `online`.
     bindEvents: function() {
+        StatusBar.overlaysWebView(false);
         document.addEventListener('deviceready', this.onDeviceReady, false);
         document.getElementById('scan').addEventListener('click', this.scan, false);
         document.getElementById('encode').addEventListener('click', this.encode, false);
