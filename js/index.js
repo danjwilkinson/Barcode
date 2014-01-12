@@ -19,6 +19,7 @@
 var app = {
     // Application Constructor
     initialize: function() {
+        StatusBar.overlaysWebView(false);
         this.bindEvents();
     },
     // Bind Event Listeners
@@ -62,12 +63,17 @@ var app = {
             var audio = new Audio("beep.wav");
             audio.play();            
             
+            $('.event').text(result.text);
+            
+            /*
             setTimeout(function() {
                 alert("We got a barcode\n" + 
                 "Result: " + result.text + "\n" + 
                 "Format: " + result.format + "\n" + 
                 "Cancelled: " + result.cancelled);  
-            }, 222);
+            }, 0);
+            */
+            
            //console.log("Scanner result: \n" +
                 //"text: " + result.text + "\n" +
                 //"format: " + result.format + "\n" +
