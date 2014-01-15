@@ -1,4 +1,17 @@
+*:not(input,textarea) {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none; /* Disable selection/Copy of UIWebView */
+}
+
 .event {
+    color:#FFFFFF;
+    font-size:12px;
+    margin:15px 0px 15px 0px;
+    padding:10px;
+    text-align:center;
+}
+
+.geolocation {
     color:#FFFFFF;
     font-size:12px;
     margin:15px 0px 15px 0px;
