@@ -36,7 +36,7 @@ var app = {
     // The scope of `this` is the event. In order to call the `receivedEvent`
     // function, we must explicity call `app.receivedEvent(...);`
     onDeviceReady: function() {
-        StatusBar.overlaysWebView(true);
+        //StatusBar.overlaysWebView(true);
         app.receivedEvent('deviceready');
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
     },
