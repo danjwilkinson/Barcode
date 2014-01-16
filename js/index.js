@@ -129,3 +129,21 @@ var app = {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }  
+
+    
+
+
+
+var uri = 'http://hr-cloud.co.uk/ws/api/users';
+//var uri = '/api/users';
+    $(document).ready(function () {
+        // Send an AJAX request
+        $.getJSON(uri)
+            .done(function (data) {
+                // On success, 'data' contains a list of users.
+                $.each(data, function (key, item) {
+                    // Add a list item for the user.
+                    $('<li>', { text: formatItem(item) }).appendTo($('#users'));
+                });
+            });
+    });
