@@ -64,6 +64,27 @@ var app = {
             var audio = new Audio("beep.wav");
             audio.play();            
             
+            
+            //Getting ready to post to API        
+            var dateNow = new Date();
+            //var userId = "893";
+            var userId = result.text;
+            var latitude = "52.292742";
+            var longitude = "-1.949225";
+            
+            alert(userId);
+            
+            // Posting to API
+            $.ajax({
+                type: 'POST',
+                url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
+                data: JSON.stringify({ UserId: userId, Latitude: latitude, Longitude: longitude, Timestamp: dateNow }, null, " "),
+                success: function (data) { alert('success'); },
+                contentType: "application/json",
+                dataType: 'json'
+            });            
+            
+            
             $('.event').text("Thank you for checking in!");
             
             /*
@@ -74,8 +95,6 @@ var app = {
                 "Cancelled: " + result.cancelled);  
             }, 0);
             */
-            
-            var theUserId = result.text;
             
            //console.log("Scanner result: \n" +
                 //"text: " + result.text + "\n" +
@@ -128,23 +147,3 @@ var app = {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
     }
-    
-    
-
-    var dateNow = new Date();
-    //var userId = "893";
-    var latitude = "52.292742";
-    var longitude = "-1.949225";
-
-    alert("sfdf");
-
-    alert(theUserId);
-    
-    $.ajax({
-        type: 'POST',
-        url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
-        data: JSON.stringify({ UserId: userId, Latitude: latitude, Longitude: longitude, Timestamp: dateNow }, null, " "),
-        success: function (data) { alert('success'); },
-        contentType: "application/json",
-        dataType: 'json'
-    });
