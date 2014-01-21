@@ -128,10 +128,13 @@ var app = {
     }
     
     var dateNow = new Date();
-    var userId = "893";
+    //var userId = "893";
+    var userId = result.text;
     var latitude = "52.292742";
     var longitude = "-1.949225";
 
+    alert(userId);
+    
     $.ajax({
         type: 'POST',
         url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
