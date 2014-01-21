@@ -64,7 +64,15 @@ var app = {
             var audio = new Audio("beep.wav");
             audio.play();            
             
-            $('.event').text(result.text);
+            $('.event').text("Thank you for checking in!");
+            
+            $('#userid').text(result.text);
+            
+            alert($("#userid").text());
+            alert($("#long").text());
+            alert($("#lat").text());
+            
+            //Then we do the JSON stuff here with our shit!
             
             /*
             setTimeout(function() {
