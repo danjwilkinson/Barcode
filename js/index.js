@@ -64,7 +64,7 @@ var app = {
             var audio = new Audio("beep.wav");
             audio.play();            
             
-            $('.event').text(result.text);
+            $('.event').text("Thank you for checking in!");
             
             /*
             setTimeout(function() {
@@ -104,23 +104,20 @@ var app = {
 
     //}
     
-    
-  
-
 };
 
     // onSuccess Geolocation
     //
     function onSuccess(position) {
-        var element = document.getElementById('geolocation');
-        element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
-                            'Longitude: '          + position.coords.longitude             + '<br />' +
-                            'Altitude: '           + position.coords.altitude              + '<br />' +
-                            'Accuracy: '           + position.coords.accuracy              + '<br />' +
-                            'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
-                            'Heading: '            + position.coords.heading               + '<br />' +
-                            'Speed: '              + position.coords.speed                 + '<br />' +
-                            'Timestamp: '          + position.timestamp                    + '<br />';
+        //var element = document.getElementById('geolocation');
+        //element.innerHTML = 'Latitude: '           + position.coords.latitude              + '<br />' +
+        //                    'Longitude: '          + position.coords.longitude             + '<br />' +
+        //                    'Altitude: '           + position.coords.altitude              + '<br />' +
+        //                    'Accuracy: '           + position.coords.accuracy              + '<br />' +
+        //                    'Altitude Accuracy: '  + position.coords.altitudeAccuracy      + '<br />' +
+        //                    'Heading: '            + position.coords.heading               + '<br />' +
+        //                    'Speed: '              + position.coords.speed                 + '<br />' +
+        //                    'Timestamp: '          + position.timestamp                    + '<br />';
     }
 
     // onError Callback receives a PositionError object
@@ -128,22 +125,18 @@ var app = {
     function onError(error) {
         alert('code: '    + error.code    + '\n' +
               'message: ' + error.message + '\n');
-    }  
-
+    }
     
+    var dateNow = new Date();
+    var userId = "893";
+    var latitude = "52.292742";
+    var longitude = "-1.949225";
 
-
-
-var uri = 'http://hr-cloud.co.uk/ws/api/users';
-//var uri = '/api/users';
-    $(document).ready(function () {
-        // Send an AJAX request
-        $.getJSON(uri)
-            .done(function (data) {
-                // On success, 'data' contains a list of users.
-                $.each(data, function (key, item) {
-                    // Add a list item for the user.
-                    $('<li>', { text: formatItem(item) }).appendTo($('#users'));
-                });
-            });
+    $.ajax({
+        type: 'POST',
+        url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
+        data: JSON.stringify({ UserId: userId, Latitude: latitude, Longitude: longitude, Timestamp: dateNow }, null, " "),
+        success: function (data) { alert('success'); },
+        contentType: "application/json",
+        dataType: 'json'
     });

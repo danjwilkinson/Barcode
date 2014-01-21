@@ -1,6 +1,12 @@
+
+
 *:not(input,textarea) {
     -webkit-touch-callout: none;
     -webkit-user-select: none; /* Disable selection/Copy of UIWebView */
+}
+
+img {
+    margin-top:-10px;
 }
 
 .event {
