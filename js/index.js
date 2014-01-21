@@ -82,41 +82,45 @@ var app = {
                 var latitude = position.coords.latitude;
                 var longitude = position.coords.longitude;
             
-            }
+            
         
             // onError Callback receives a PositionError object
             //
-            function onError(error) {
-                alert('code: '    + error.code    + '\n' +
-                      'message: ' + error.message + '\n');
-            }            
+            //function onError(error) {
+            //    alert('code: '    + error.code    + '\n' +
+            //          'message: ' + error.message + '\n');
+            //}            
             
             
             
             
-            //Getting ready to post to API        
-            var dateNow = new Date();
-            //var userId = "893";
-            var userId = result.text;
-            //var latitude = "52.292742";
-            //var longitude = "-1.949225";
+                //Getting ready to post to API        
+                var dateNow = new Date();
+                //var userId = "893";
+                var userId = result.text;
+                //var latitude = "52.292742";
+                //var longitude = "-1.949225";
+                
+                alert(userId);
+                alert(latitude);
+                alert(longitude);
+                
+                // Posting to API
+                $.ajax({
+                    type: 'POST',
+                    url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
+                    data: JSON.stringify({ UserId: userId, Latitude: latitude, Longitude: longitude, Timestamp: dateNow }, null, " "),
+                    success: function (data) { alert('success'); },
+                    contentType: "application/json",
+                    dataType: 'json'
+                });            
+                
+                
+                $('.event').text("Thank you for checking in!");
+                    
             
-            alert(userId);
-            alert(latitude);
-            alert(longitude);
-            
-            // Posting to API
-            $.ajax({
-                type: 'POST',
-                url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
-                data: JSON.stringify({ UserId: userId, Latitude: latitude, Longitude: longitude, Timestamp: dateNow }, null, " "),
-                success: function (data) { alert('success'); },
-                contentType: "application/json",
-                dataType: 'json'
-            });            
-            
-            
-            $('.event').text("Thank you for checking in!");
+            //End of GPS function
+            }
             
             /*
             setTimeout(function() {
