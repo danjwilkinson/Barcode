@@ -36,7 +36,7 @@ var app = {
     // The scope of `this` is the event. In order to call the `receivedEvent`
     // function, we must explicity call `app.receivedEvent(...);`
     onDeviceReady: function() {
-        //StatusBar.overlaysWebView(true);
+        StatusBar.overlaysWebView(true);
         app.receivedEvent('deviceready');
         navigator.geolocation.getCurrentPosition(onSuccess, onError);
     },
@@ -64,38 +64,7 @@ var app = {
             var audio = new Audio("beep.wav");
             audio.play();            
             
-
-        
-            // onError Callback receives a PositionError object
-            //
-            //function onError(error) {
-            //    alert('code: '    + error.code    + '\n' +
-            //          'message: ' + error.message + '\n');
-            //}            
-            
-            //Getting ready to post to API        
-            //var dateNow = new Date();
-            //var userId = "893";
-            var userId = result.text;
-            //var latitude = "52.292742";
-            //var longitude = "-1.949225";
-            
-            alert(userId);
-            //alert(latitude);
-            //alert(longitude);
-            
-            // Posting to API
-            //$.ajax({
-            //    type: 'POST',
-            //    url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
-            //    data: JSON.stringify({ UserId: userId, Latitude: latitude, Longitude: longitude, Timestamp: dateNow }, null, " "),
-            //    success: function (data) { alert('success'); },
-            //    contentType: "application/json",
-            //    dataType: 'json'
-            //});            
-            
-            
-            $('.event').text("Thank you for checking in!");
+            $('.event').text(result.text);
             
             /*
             setTimeout(function() {
@@ -118,6 +87,9 @@ var app = {
             }
             */
 
+        }, function (error) { 
+            console.log("Scanning failed: ", error); 
+        } );
     }//,
 
     //encode: function() {
