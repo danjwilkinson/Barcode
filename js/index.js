@@ -129,11 +129,14 @@ var app = {
               'message: ' + error.message + '\n');
     }
     
+    
+
     var dateNow = new Date();
     //var userId = "893";
-    var userId = result.text;
     var latitude = "52.292742";
     var longitude = "-1.949225";
+
+    alert("sfdf");
 
     alert(theUserId);
     
