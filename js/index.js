@@ -68,9 +68,22 @@ var app = {
             
             $('#userid').text(result.text);
             
-            alert($("#userid").text());
-            alert($("#long").text());
-            alert($("#lat").text());
+            var theUserId = $("#userid").text();
+            var theLatitude = $("#lat").text();
+            var theLongitude = $("#long").text();
+            var dateNow = new Date();
+            
+            $.ajax({
+                type: 'POST',
+                url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
+                data: JSON.stringify({ UserId: theUserId, Latitude: theLatitude, Longitude: theLongitude, Timestamp: dateNow }, null, " "),
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                success: function (data) { alert('success'); },
+                failure: function (errMsg) {
+                    alert(errMsg);
+                }
+            });           
             
             //Then we do the JSON stuff here with our shit!
             
