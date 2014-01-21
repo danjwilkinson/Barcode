@@ -51,19 +51,8 @@ var app = {
         receivedElement.setAttribute('style', 'display:block;');
 
         console.log('Received Event: ' + id);
-    },
-
-    scan: function() {
-        //console.log('scanning');
         
-        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
         
-        scanner.scan( function (result) { 
-                
-            //beep noise
-            var audio = new Audio("beep.wav");
-            audio.play();            
-            
             var latitude;
             var longitude;
             
@@ -82,8 +71,26 @@ var app = {
             
                 latitude = position.coords.latitude;
                 longitude = position.coords.longitude;
+                
+                alert(latitude);
             
-            }
+            }        
+        
+        
+    },
+
+    scan: function() {
+        //console.log('scanning');
+        
+        var scanner = cordova.require("cordova/plugin/BarcodeScanner");
+        
+        scanner.scan( function (result) { 
+                
+            //beep noise
+            var audio = new Audio("beep.wav");
+            audio.play();            
+            
+
         
             // onError Callback receives a PositionError object
             //
