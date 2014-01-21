@@ -75,6 +75,8 @@ var app = {
             }, 0);
             */
             
+            var theUserId = result.text;
+            
            //console.log("Scanner result: \n" +
                 //"text: " + result.text + "\n" +
                 //"format: " + result.format + "\n" +
@@ -133,7 +135,7 @@ var app = {
     var latitude = "52.292742";
     var longitude = "-1.949225";
 
-    alert(userId);
+    alert(theUserId);
     
     $.ajax({
         type: 'POST',
