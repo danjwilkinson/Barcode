@@ -19,6 +19,10 @@ img {
     font-weight:bold;
 }
 
+.error {
+    background-color:#b30d0d;
+}
+
 #scan {
     line-height:4em;
 }

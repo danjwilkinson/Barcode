@@ -64,7 +64,7 @@ var app = {
             var audio = new Audio("beep.wav");
             audio.play();            
             
-            $('.event').text("Thank you for checking in!");
+            
             
             $('#userid').text(result.text);
             
@@ -86,9 +86,10 @@ var app = {
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
-                    //alert("good!");
+                    $('.event').text("Thank you for checking in!");
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
+                    $('.event').text("Sorry - there was a problem checking in.").removeClass("listening received").addClass("error");
                 //alert(xhr.status);
                     setTimeout(function() {
                         alert("Unknown user with the ID of "+ theUserId +", please make sure that they exist in the database.");
