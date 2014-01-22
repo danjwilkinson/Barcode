@@ -81,18 +81,12 @@ var app = {
             $.ajax({
                 type: 'POST',
                 url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
-                data: JSON.stringify({ UserId: '893', Latitude: '1', Longitude: '2', Timestamp: dateNow }, null, " "),
+                data: JSON.stringify({ UserId: theUserId, Latitude: theLatitude, Longitude: theLongitude, Timestamp: dateNow }, null, " "),
                 //data: {"UserId": userId, "Latitude": latitude, "Longitude": longitude, "Timestamp": dateNow },
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
-                    switch (result) {
-                        case true:
-                            processResponse(result);
-                            break;
-                        default:
-                            resultDiv.html(result);
-                    }
+                    alert("good!");
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
