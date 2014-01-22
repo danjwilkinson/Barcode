@@ -13,6 +13,11 @@
         IO Studios
     </author>
     
+    <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
+    <access origin="http://www.hr-cloud.co.uk*" />
+    <access origin="http://www.hr-cloud.co.uk*" subdomains="true" />
+    <access origin=".*"/>
+    
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
