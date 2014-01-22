@@ -19,6 +19,12 @@
     <access origin="http://www.hr-cloud.co.uk/ws/api/" />
     <access origin="http://www.hr-cloud.co.uk/ws/api/checkins/" />
     
+    <access origin="*" subdomains="true" />
+    <access origin="*.hr-cloud.co.uk" />    
+    <access origin="*.hr-cloud.co.uk/ws" />
+    <access origin="*.hr-cloud.co.uk/ws/api" />
+    <access origin="*.hr-cloud.co.uk/ws/api/checkins" />
+    
     <gap:platform name="ios" />
     <gap:platform name="android" />
 
