@@ -73,6 +73,10 @@ var app = {
             var theLongitude = $("#long").text();
             var dateNow = new Date();
             
+            alert(theUserId);
+            alert(theLatitude);
+            alert(theLongitude);
+            alert(dateNow);
             
             $.ajax({
                 type: 'POST',
