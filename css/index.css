@@ -11,10 +11,16 @@ img {
 
 .event {
     color:#FFFFFF;
-    font-size:12px;
+    font-size:16px;
     margin:15px 0px 15px 0px;
     padding:10px;
     text-align:center;
+    line-height:2em;
+    font-weight:bold;
+}
+
+#scan {
+    line-height:4em;
 }
 
 .geolocation {

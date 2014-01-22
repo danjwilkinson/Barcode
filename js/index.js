@@ -89,8 +89,10 @@ var app = {
                     //alert("good!");
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
-                alert(xhr.status);
-                alert(thrownError);
+                //alert(xhr.status);
+                    setTimeout(function() {
+                        alert("Unknown user with the ID of "+ theUserId +", please make sure that they exist in the database.");
+                    }, 0);
                 }
             });
        
