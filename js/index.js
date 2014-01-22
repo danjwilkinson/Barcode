@@ -86,10 +86,12 @@ var app = {
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (data) { alert('success'); },
-                failure: function (errMsg) {
+                error: function (errMsg) {
                     alert(errMsg);
                 }
             });
+            
+            return false;
        
             
             //Then we do the JSON stuff here with our shit!
