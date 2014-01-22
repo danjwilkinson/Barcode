@@ -86,7 +86,7 @@ var app = {
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
-                    alert("good!");
+                    //alert("good!");
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                 alert(xhr.status);
