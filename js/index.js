@@ -86,7 +86,7 @@ var app = {
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (result) {
-                    $('.event').text("Thank you for checking in!");
+                    $('.event').text("Thank you for checking in!").removeClass("listening error").addClass("received");
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     $('.event').text("Sorry - there was a problem checking in.").removeClass("listening received").addClass("error");
