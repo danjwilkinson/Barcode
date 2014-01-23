@@ -175,18 +175,37 @@ var app = {
             $("#displayClientId").text(value);
         }
         
-        $("#pinPanel").hide();
+        //$("#pinPanel").hide();
         $("#clientIdPanel").hide();
+        $("#Back").hide();
+        $("#statusAndScan").hide();
+        $("#Header").hide();
         
-        $( "#configButton" ).click(function() {
-            $("#statusAndScan").fadeOut('slow');
-            $("#pinPanel").delay( 800 ).fadeIn('slow');
+        $( "#appLoginButton" ).click(function() {            
+            if ($("#appLoginPin").val() == '2003') {
+                $("#appLogin").fadeOut('fast');
+                $("#pinLogin").delay( 300 ).fadeIn('fast');
+                $("#Header").delay( 300 ).fadeIn('fast');
+                $("#statusAndScan").delay( 300 ).fadeIn('fast');
+            } else {
+                alert("Wrong PIN, please try again.");
+            }
+        });           
+        
+        $('#Back').click(function() {
+            location.reload();
+        });
+        
+        $( "#configButton" ).click(function() { 
+            $("#Back").show();
+            $("#statusAndScan").fadeOut('fast');
+            $("#pinPanel").delay( 300 ).fadeIn('fast');
         });
         
         $( "#pinLogin" ).click(function() {            
             if ($("#pinCode").val() == '7391') {
-                $("#pinPanel").fadeOut('slow');
-                $("#clientIdPanel").delay( 800 ).fadeIn('slow');
+                $("#pinPanel").fadeOut('fast');
+                $("#clientIdPanel").delay( 300 ).fadeIn('fast');
             } else {
                 alert("Wrong PIN, please try again.");
             }
@@ -202,10 +221,11 @@ var app = {
                 var value = window.localStorage.getItem("key");
                 //Display the client ID
                 $("#displayClientId").text(value);
-                $("#clientIdPanel").fadeOut('slow');
+                $("#clientIdPanel").fadeOut('fast');
                 $("#pinCode").val('');
                 $("#clientId").val('');
-                $("#statusAndScan").delay( 800 ).fadeIn('slow');
+                $("#statusAndScan").delay( 300 ).fadeIn('fast');
+                $("#Back").hide();
             }
         });        
 
