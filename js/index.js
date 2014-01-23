@@ -137,9 +137,6 @@ var app = {
     //    );
 
     //}
-    
-    
-  
 
 };
 
@@ -160,9 +157,7 @@ var app = {
         //                    'Heading: '            + position.coords.heading               + '<br />' +
         //                    'Speed: '              + position.coords.speed                 + '<br />' +
         //                    'Timestamp: '          + position.timestamp                    + '<br />';
-        
-        
-        
+       
     }
 
     // onError Callback receives a PositionError object
@@ -172,4 +167,49 @@ var app = {
               'message: ' + error.message + '\n');
     }  
 
-    
+    //Login to change the client ID
+    $( document ).ready(function() {
+        
+        // See if there's an ID set
+        var value = window.localStorage.getItem("key");
+                
+        if (value == null) {
+            // If there isn't display the client ID to 000
+            $("#displayClientId").text('0000');
+        } else {
+            // If there is display the client ID to the value
+            $("#displayClientId").text(value);
+        }
+        
+        $("#pinPanel").hide();
+        $("#clientIdPanel").hide();
+        
+        $( "#configButton" ).click(function() {
+            $("#pinPanel").fadeIn('slow');
+        });
+        
+        $( "#pinLogin" ).click(function() {            
+            if ($("#pinCode").val() == '542') {
+                
+                $("#pinPanel").fadeOut('slow');
+                $("#clientIdPanel").delay( 800 ).fadeIn('slow');
+            } else {
+                alert("Wrong PIN, please try again.");
+            }
+        });        
+        
+        $( "#clientSave" ).click(function() {
+            if ($("#clientId").val() == '') {
+                alert("Please enter a client ID");
+            } else {
+                //Set the new value here
+                window.localStorage.setItem("key", $("#clientId").val());
+                // See if there's an ID set
+                var value = window.localStorage.getItem("key");
+                //Display the client ID
+                $("#displayClientId").text(value);
+                $("#clientIdPanel").fadeOut('slow');
+            }
+        });        
+
+    });

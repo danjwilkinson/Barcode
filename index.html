@@ -17,7 +17,8 @@
 
     <div data-role="page" data-theme="a">
         <div data-role="header">
-            <h1>QR Check-in</h1>
+            <a href="" data-icon="gear" class="ui-btn-right" id="configButton">Config</a>
+            <h1>Check-in <span id="displayClientId"></span></h1>
         </div><!-- /header -->
         <div role="main" class="ui-content">
             <p style="text-align:center">
@@ -31,11 +32,24 @@
                 <p class="geolocation" id="lat"></p>
             </div>
         
-            <a href="#" class="topcoat-button ui-btn" id="scan">Scan</a> 
+            <a href="#" class="topcoat-button ui-btn" id="scan">Scan</a>
+            
+            <div class="ui-body ui-body-a ui-corner-all" id="pinPanel">
+                <label for="text-1">Enter PIN:</label>
+                <input type="tel" data-clear-btn="true" name="pin" id="pinCode" value="">
+                <a href="#" class="topcoat-button ui-btn" id="pinLogin">Login</a>
+            </div>
+            
+            <div class="ui-body ui-body-a ui-corner-all" id="clientIdPanel">
+                <label for="text-1">Enter Client ID</label>
+                <input type="tel" data-clear-btn="true" name="clientId" id="clientId" value="">
+                <a href="#" class="topcoat-button ui-btn" id="clientSave">Save</a>
+            </div>            
             
             <ul id="users"></ul>
             
-        </div><!-- /content -->
+        </div><!-- /content --> 
+        
     </div><!-- /page -->        
     
 
