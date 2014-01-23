@@ -63,25 +63,19 @@ var app = {
             //beep noise
             var audio = new Audio("beep.wav");
             audio.play();            
-            
-            
-            
+
             $('#userid').text(result.text);
             
             var theUserId = $("#userid").text();
+            var theClientId = $("#displayClientId").text();
             var theLatitude = $("#lat").text();
             var theLongitude = $("#long").text();
             var dateNow = new Date();
             
-            //alert(theUserId);
-            //alert(theLatitude);
-            //alert(theLongitude);
-            //alert(dateNow);
-            
             $.ajax({
                 type: 'POST',
                 url: 'http://www.hr-cloud.co.uk/ws/api/checkins/',
-                data: JSON.stringify({ UserId: theUserId, Latitude: theLatitude, Longitude: theLongitude, Timestamp: dateNow }, null, " "),
+                data: JSON.stringify({ UserId: theUserId, ClientId: theClientId, Latitude: theLatitude, Longitude: theLongitude, Timestamp: dateNow }, null, " "),
                 //data: {"UserId": userId, "Latitude": latitude, "Longitude": longitude, "Timestamp": dateNow },
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
@@ -189,7 +183,7 @@ var app = {
         });
         
         $( "#pinLogin" ).click(function() {            
-            if ($("#pinCode").val() == '542') {
+            if ($("#pinCode").val() == '7391') {
                 
                 $("#pinPanel").fadeOut('slow');
                 $("#clientIdPanel").delay( 800 ).fadeIn('slow');
@@ -200,7 +194,7 @@ var app = {
         
         $( "#clientSave" ).click(function() {
             if ($("#clientId").val() == '') {
-                alert("Please enter a client ID");
+                alert("Please enter a Client ID");
             } else {
                 //Set the new value here
                 window.localStorage.setItem("key", $("#clientId").val());
@@ -209,6 +203,8 @@ var app = {
                 //Display the client ID
                 $("#displayClientId").text(value);
                 $("#clientIdPanel").fadeOut('slow');
+                $("#pinCode").val('');
+                $("#clientId").val('');
             }
         });        
 
