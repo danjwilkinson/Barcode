@@ -17,43 +17,43 @@
 
     <div data-role="page" data-theme="a">
         <div data-role="header">
-            <a href="" data-icon="gear" class="ui-btn-right" id="configButton">Config</a>
+
+            <a href="#" class="ui-btn-right ui-btn ui-icon-gear ui-btn-icon-notext ui-corner-all" id="configButton" data-role="button" role="button"></a>
+            
             <h1>Check-in <span id="displayClientId"></span></h1>
         </div><!-- /header -->
         <div role="main" class="ui-content">
             <p style="text-align:center">
                 <img src="img/logo.png" />
             </p>
-            <div id="deviceready" class="blink">
-                <p class="event listening">Connecting to Device</p>
-                <p class="event received">Device is Ready</p>
-                <p class="geolocation" id="userid"></p>
-                <p class="geolocation" id="long"></p>
-                <p class="geolocation" id="lat"></p>
-            </div>
-        
-            <a href="#" class="topcoat-button ui-btn" id="scan">Scan</a>
             
             <div class="ui-body ui-body-a ui-corner-all" id="pinPanel">
-                <label for="text-1">Enter PIN:</label>
+                <label for="pinCode">Enter PIN</label>
                 <input type="tel" data-clear-btn="true" name="pin" id="pinCode" value="">
                 <a href="#" class="topcoat-button ui-btn" id="pinLogin">Login</a>
             </div>
             
             <div class="ui-body ui-body-a ui-corner-all" id="clientIdPanel">
-                <label for="text-1">Enter Client ID</label>
+                <label for="clientId">Enter Client ID</label>
                 <input type="tel" data-clear-btn="true" name="clientId" id="clientId" value="">
                 <a href="#" class="topcoat-button ui-btn" id="clientSave">Save</a>
-            </div>            
+            </div>             
             
-            <ul id="users"></ul>
-            
+            <div id="statusAndScan">
+                <div id="deviceready" class="blink">
+                    <p class="event listening">Connecting to Device</p>
+                    <p class="event received">Device is Ready</p>
+                    <p class="geolocation" id="userid"></p>
+                    <p class="geolocation" id="long"></p>
+                    <p class="geolocation" id="lat"></p>
+                </div>
+                <a href="#" class="topcoat-button ui-btn" id="scan">Scan</a>
+            </div>
+                
         </div><!-- /content --> 
         
     </div><!-- /page -->        
     
-
-        
     <script type="text/javascript" src="cordova.js"></script>
     <script type="text/javascript" src="barcodescanner.js"></script>
     <script type="text/javascript" src="childbrowser.js"></script>

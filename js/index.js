@@ -179,12 +179,12 @@ var app = {
         $("#clientIdPanel").hide();
         
         $( "#configButton" ).click(function() {
-            $("#pinPanel").fadeIn('slow');
+            $("#statusAndScan").fadeOut('slow');
+            $("#pinPanel").delay( 800 ).fadeIn('slow');
         });
         
         $( "#pinLogin" ).click(function() {            
             if ($("#pinCode").val() == '7391') {
-                
                 $("#pinPanel").fadeOut('slow');
                 $("#clientIdPanel").delay( 800 ).fadeIn('slow');
             } else {
@@ -205,6 +205,7 @@ var app = {
                 $("#clientIdPanel").fadeOut('slow');
                 $("#pinCode").val('');
                 $("#clientId").val('');
+                $("#statusAndScan").delay( 800 ).fadeIn('slow');
             }
         });        
 
