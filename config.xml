@@ -2,15 +2,15 @@
 <widget xmlns     = "http://www.w3.org/ns/widgets"
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "co.uk.iostudios.barcode"
-        version   = "2.0.0">
-    <name>QR Scanner</name>
+        version   = "3.0.0">
+    <name>Southalls QR Scanner</name>
 
     <description>
-        Scans barcodes test for IO Studios.
+        A check in & out system using QR codes. Created by IO Studios.
     </description>
 
-    <author href="http://www.iostudios.co.uk" email="support@iostudios.co.uk">
-        IO Studios
+    <author href="http://www.iostudios.co.uk" email="dan@iostudios.co.uk">
+        Dan Wilkinson, IO Studios
     </author>
     
     <access origin="http://127.0.0.1*"/> <!-- allow local pages -->
