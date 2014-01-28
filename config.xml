@@ -3,7 +3,7 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "co.uk.iostudios.barcode"
         version   = "3.0.0">
-    <name>Southalls QR Scanner</name>
+    <name>QR Scanner</name>
 
     <description>
         A check in and out system using QR codes. Created by IO Studios.
