@@ -162,10 +162,14 @@ var app = {
     }  
 
     //Login to change the client ID
-    $( document ).ready(function() {
+    $(document).ready(function () {
+        
+        //clears all localstorage
+        //window.localStorage.clear();
         
         // See if there's an ID set
         var value = window.localStorage.getItem("key");
+        var correctPinEntered = window.localStorage.getItem("correctPinEntered");
                 
         if (value == null) {
             // If there isn't display the client ID to 000
@@ -175,17 +179,29 @@ var app = {
             $("#displayClientId").text(value);
         }
         
+        $("#clientId").val(value);
+        
         //$("#pinPanel").hide();
         $("#clientIdPanel").hide();
         $("#Back").hide();
         $("#statusAndScan").hide();
         $("#Header").hide();
         
+        //if we've logged in before, no need to do it again
+        if (correctPinEntered == "true") {
+            $("#appLogin").hide();
+            $("#Header").show();
+            $("#statusAndScan").show();
+        }
+        
         $( "#appLoginButton" ).click(function() {            
             if ($("#appLoginPin").val() == '2003') {
+                
+                window.localStorage.setItem("correctPinEntered", "true");
+                
                 $("#appLogin").fadeOut('fast');
-                $("#pinLogin").delay( 300 ).fadeIn('fast');
                 $("#Header").delay( 300 ).fadeIn('fast');
+                $("#pinLogin").delay( 300 ).fadeIn('fast');
                 $("#statusAndScan").delay( 300 ).fadeIn('fast');
             } else {
                 alert("Wrong PIN, please try again.");
