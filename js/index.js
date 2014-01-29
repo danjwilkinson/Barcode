@@ -80,7 +80,7 @@ var app = {
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
                 success: function (result) {  
-                    $.getJSON("api/checkins/"+theUserId+"",function(result){
+                    $.getJSON("http://www.hr-cloud.co.uk/ws/api/checkins/"+theUserId+"",function(result){
                         $.each(result, function(i, field){
                             alert(field.LoggedIn);
                             var loginStatus = field.LoggedIn;
