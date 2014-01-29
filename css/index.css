@@ -51,6 +51,17 @@ label {
     display:none;
 }
 
+.event.login {
+    background-color:#4B946A;
+    display:none;
+}
+
+.event.logout {
+    background-color:#419ac9;
+    display:none;
+}
+
+
 @keyframes fade {
     from { opacity: 1.0; }
     50% { opacity: 0.4; }

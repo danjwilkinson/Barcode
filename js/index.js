@@ -83,11 +83,12 @@ var app = {
                     $.getJSON("http://www.hr-cloud.co.uk/ws/api/checkins/"+theUserId+"",function(result){
                         $.each(result, function(i, field){
                             var loginStatus = field.LoggedIn;
-                            var userName = field.userName;
+                            var staffName = field.staffName;
+                            staffName = staffName.split(" ")[0];
                             if (loginStatus == true){
-                                $('.event').text("Thank you for checking in, "+userName+"!").removeClass("listening error").addClass("received");                            
+                                $('.event').text("You've checked in, "+staffName+"!").removeClass("listening error").addClass("login");                            
                             } else {
-                                $('.event').text("Thank you for checking out, "+userName+"!").removeClass("listening error").addClass("received"); 
+                                $('.event').text("You've checked out, "+staffName+"!").removeClass("listening error").addClass("logout");
                             }
                         });
                     });
@@ -100,8 +101,7 @@ var app = {
                     }, 0);
                 }
             });
-       
-            
+ 
             //Then we do the JSON stuff here with our shit!
             
             /*
