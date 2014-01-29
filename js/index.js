@@ -86,9 +86,9 @@ var app = {
                             var staffName = field.staffName;
                             staffName = staffName.split(" ")[0];
                             if (loginStatus == true){
-                                $('.event').text("You've checked in, "+staffName+"!").removeClass("listening error").addClass("login");                            
+                                $('.event').text("You've checked in, "+staffName+"!").removeClass("listening error logout").addClass("login");                            
                             } else {
-                                $('.event').text("You've checked out, "+staffName+"!").removeClass("listening error").addClass("logout");
+                                $('.event').text("You've checked out, "+staffName+"!").removeClass("listening error login").addClass("logout");
                             }
                         });
                     });
