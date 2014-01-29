@@ -82,12 +82,12 @@ var app = {
                 success: function (result) {  
                     $.getJSON("http://www.hr-cloud.co.uk/ws/api/checkins/"+theUserId+"",function(result){
                         $.each(result, function(i, field){
-                            alert(field.LoggedIn);
                             var loginStatus = field.LoggedIn;
+                            var userName = field.userName;
                             if (loginStatus == true){
-                                $('.event').text("Thank you for checking in, "+theUserId+"!").removeClass("listening error").addClass("received");                            
+                                $('.event').text("Thank you for checking in, "+userName+"!").removeClass("listening error").addClass("received");                            
                             } else {
-                                $('.event').text("Thank you for checking out, "+theUserId+"!").removeClass("listening error").addClass("received"); 
+                                $('.event').text("Thank you for checking out, "+userName+"!").removeClass("listening error").addClass("received"); 
                             }
                         });
                     });
@@ -172,7 +172,7 @@ var app = {
     }  
 
     //Login to change the client ID
-    $(document).ready(function () {
+    $(document).ready(function () { 
         
         //clears all localstorage
         //window.localStorage.clear();
