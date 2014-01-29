@@ -79,8 +79,18 @@ var app = {
                 //data: {"UserId": userId, "Latitude": latitude, "Longitude": longitude, "Timestamp": dateNow },
                 contentType: "application/json; charset=utf-8",
                 dataType: "json",
-                success: function (result) {
-                    $('.event').text("Thank you for checking in!").removeClass("listening error").addClass("received");
+                success: function (result) {  
+                    $.getJSON("api/checkins/"+theUserId+"",function(result){
+                        $.each(result, function(i, field){
+                            alert(field.LoggedIn);
+                            var loginStatus = field.LoggedIn;
+                            if (loginStatus == true){
+                                $('.event').text("Thank you for checking in, "+theUserId+"!").removeClass("listening error").addClass("received");                            
+                            } else {
+                                $('.event').text("Thank you for checking out, "+theUserId+"!").removeClass("listening error").addClass("received"); 
+                            }
+                        });
+                    });
                 },
                 error: function (xhr, ajaxOptions, thrownError) {
                     $('.event').text("Sorry - there was a problem checking in.").removeClass("listening received").addClass("error");
