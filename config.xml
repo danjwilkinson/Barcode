@@ -3,10 +3,10 @@
         xmlns:gap = "http://phonegap.com/ns/1.0"
         id        = "co.uk.iostudios.barcode"
         version   = "3.0.0">
-    <name>QR Scanner</name>
+    <name>Time Cloud</name>
 
     <description>
-        A check in and out system using QR codes. Created by IO Studios.
+        Time Cloud is a service provided by Southall Associates, an application that allows users to check in and out of their respected workplace using QR technology.
     </description>
 
     <author href="http://www.iostudios.co.uk" email="dan@iostudios.co.uk">
